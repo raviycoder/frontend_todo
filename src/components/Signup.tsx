@@ -68,10 +68,10 @@ const Signup = () => {
     },
   });
   useEffect(() => {
-    if (cookies.token && cookies.token !== "undefined") {
+    if (cookies.todo_token && cookies.todo_token !== "undefined") {
       router.push("/");
     }
-  }, [cookies.token, router]);
+  }, [cookies.todo_token, router]);
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
@@ -87,8 +87,8 @@ const Signup = () => {
             title: "Your Successfully Register",
           });
         }
-        if (!cookies.token || cookies.token === "undefined") {
-          setCookie("token", res.data.token, {
+        if (!cookies.todo_token || cookies.todo_token === "undefined") {
+          setCookie("todo_token", res.data.token, {
             // httpOnly: true, // Cookie is not accessible via JavaScript
             secure: false, // Only send over HTTPS in production
             maxAge: 21 * 24 * 60 * 60 * 1000, // Cookie expires in 21 days

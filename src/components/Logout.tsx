@@ -13,8 +13,8 @@ const LogoutUser = ({
   const router = useRouter();
 
   const handleLogout = () => {
-    if (cookies.token) {
-      removeCookie("token");
+    if (cookies.todo_token) {
+      removeCookie("todo_token");
       router.push("/auth/login");
     }else{
       router.push("/auth/signup");

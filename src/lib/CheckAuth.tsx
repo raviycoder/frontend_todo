@@ -6,7 +6,7 @@ import { useCookies } from "react-cookie"
 export function CheckAuth() {
     const [cookies] = useCookies();
     const router = useRouter();
-    const token = cookies.token === "undefined" || !cookies.token;
+    const token = cookies.todo_token === "undefined" || !cookies.todo_token;
 
     useEffect(() => {
         if (token) {

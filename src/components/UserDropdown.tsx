@@ -31,7 +31,7 @@ const UserDropdown = () => {
           </Avatar>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
-          {!cookies.token ? (
+          {!cookies.todo_token ? (
             <>
               <Link href="/auth/login">
                 <DropdownMenuItem>Login</DropdownMenuItem>
